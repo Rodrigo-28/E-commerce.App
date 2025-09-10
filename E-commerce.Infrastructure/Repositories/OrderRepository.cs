@@ -71,8 +71,8 @@ namespace E_commerce.Infrastructure.Repositories
             return await _context.Orders
                 .Where(o => o.Status == orderStatus)
                  .Include(o => o.Items)
-            .ThenInclude(oi => oi.Product)
-        .ToListAsync();
+                    .ThenInclude(oi => oi.Product)
+                 .ToListAsync();
         }
 
         //public async Task<IEnumerable<Order>> GetByStatus(OrderStatus status)
@@ -90,9 +90,6 @@ namespace E_commerce.Infrastructure.Repositories
 
         }
 
-        //public Task<IEnumerable<Order>> GetByStatus(Order order)
-        //{
-        //    throw new NotImplementedException();
-        //}
+
     }
 }
